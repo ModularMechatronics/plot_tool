@@ -1,0 +1,10 @@
+
+
+.vscode
+cpp/build
+
+cpp/communication/demos/demo0
+cpp/communication/demos/demo1
+
+debug
+release

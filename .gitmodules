@@ -1,0 +1,6 @@
+[submodule "cpp/externals/arl"]
+	path = cpp/externals/arl
+	url = https://github.com/Danpihl/arl.git
+[submodule "cpp/externals/googletest"]
+	path = cpp/externals/googletest
+	url = https://github.com/google/googletest.git
