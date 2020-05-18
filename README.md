@@ -10,5 +10,5 @@ https://youtu.be/Or2qAsF1gD8
 ### State of the code
 The code is currently a bit of a mess. Looking for people who can help make it better, add functionality and clean up the code.
 
-### Prebuilt binaries (not very well tested)
-https://drive.google.com/drive/folders/1dPZ2sDv5mxRnWNdqyCmSQ1Gl3b0abhQG
+### License
+The software is licensed with the MIT license.
