@@ -19,7 +19,7 @@ Configure wxWidgets with the following command:
 #### Ubuntu
 ```./configure --with-opengl --with-gtk=2 --disable-shared --disable-dynamicloader --without-libpng --without-libjpeg --without-libtiff --without-libjbig --enable-svg=off```
 
-# Mac:
+#### Mac:
 ```./configure --with-opengl --with-osx_cocoa --disable-shared --disable-dynamicloader --without-libpng --without-libjpeg --without-libtiff --without-libjbig --enable-svg=off```
 
 
