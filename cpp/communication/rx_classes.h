@@ -714,6 +714,34 @@ public:
     }
 };
 
+class PositionRx : public RxReceiveBase
+{
+private:
+    Pos2D data_;
+
+public:
+    typedef Pos2D data_type;
+    Pos2D getData() const
+    {
+        return data_;
+    }
+    PositionRx() : RxReceiveBase(Command::POS2D) {}
+    PositionRx(const Pos2D data) : RxReceiveBase(Command::POS2D), data_(data) {}
+    PositionRx(const char* const buffer) : RxReceiveBase(Command::POS2D)
+    {
+        plot_tool::fillObjectsFromBuffer(buffer, data_);
+    }
+
+    size_t sizeOfData() const override
+    {
+        return sizeof(Pos2D);
+    }
+    const char* getDataPointer() const override
+    {
+        return reinterpret_cast<const char* const>(&data_);
+    }
+};
+
 }  // namespace plot_tool
 
 #endif

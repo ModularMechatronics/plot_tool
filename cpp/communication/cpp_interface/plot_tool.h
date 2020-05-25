@@ -26,6 +26,16 @@ inline void figure(const size_t figure_number)
     sendTxList(tx_list);
 }
 
+inline void setPosition(const int x, const int y)
+{
+    TxList tx_list;
+    tx_list.append(Command::FUNCTION, Function::POSITION);
+    tx_list.append(Command::HAS_PAYLOAD, false);
+    tx_list.append(Command::POS2D, Pos2D(x, y));
+
+    sendTxList(tx_list);
+}
+
 inline void holdOn()
 {
     TxList tx_list;

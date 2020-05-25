@@ -143,6 +143,10 @@ template <typename U> bool checkTypeValid(const Command& command)
     {
         return std::is_same<U, PointSize>::value;
     }
+    else if (command == Command::POS2D)
+    {
+        return std::is_same<U, Pos2D>::value;
+    }
     else
     {
         return false;

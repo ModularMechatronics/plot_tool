@@ -129,6 +129,11 @@ inline RxReceiveBase* getPointerFromCommandType(const Command cmd, RxReceiveBase
         PointSizeRx* other_ptr = dynamic_cast<PointSizeRx*>(base_ptr);
         ptr = new PointSizeRx(other_ptr->getData());
     }
+    else if (Command::POS2D == cmd)
+    {
+        PositionRx* other_ptr = dynamic_cast<PositionRx*>(base_ptr);
+        ptr = new PositionRx(other_ptr->getData());
+    }
     else
     {
         EXIT() << "Pointer type not found!";
@@ -238,6 +243,10 @@ inline std::pair<RxReceiveBase*, size_t> getPointerFromCommandType(const Command
     {
         ptr = new PointSizeRx(buffer);
     }
+    else if (Command::POS2D == cmd)
+    {
+        ptr = new PositionRx(buffer);
+    }
     else
     {
         EXIT() << "Pointer type not found!";
@@ -344,6 +353,10 @@ template <typename T> Command getCommandTypeFromClass()
     else if (std::is_same<T, PointSizeRx>::value)
     {
         cmd = Command::POINT_SIZE;
+    }
+    else if (std::is_same<T, PositionRx>::value)
+    {
+        cmd = Command::POS2D;
     }
     else
     {

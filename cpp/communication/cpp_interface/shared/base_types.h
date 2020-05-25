@@ -34,6 +34,24 @@ struct Dimension2D
     }
 };
 
+struct Pos2D
+{
+    int x;
+    int y;
+
+    Pos2D()
+    {
+        x = 0;
+        y = 0;
+    }
+
+    Pos2D(const int x_, const int y_)
+    {
+        x = x_;
+        y = y_;
+    }
+};
+
 struct Bound3D
 {
     double x;

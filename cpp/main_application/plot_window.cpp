@@ -1,5 +1,7 @@
 #include "plot_window.h"
 
+#include "communication/rx_classes.h"
+#include "communication/rx_list.h"
 #include "main_application/plot_window_gl_pane.h"
 
 PlotWindow::PlotWindow(wxWindow* parent, const int figure_number)
@@ -72,5 +74,15 @@ std::string PlotWindow::getWindowName()
 
 void PlotWindow::addData(const plot_tool::RxList& rx_list, const std::vector<char*> data_vec)
 {
-    gl_pane_->addData(rx_list, data_vec);
+    const plot_tool::Function function_type = rx_list.getObjectData<plot_tool::FunctionRx>();
+
+    if (function_type == plot_tool::Function::POSITION)
+    {
+        const plot_tool::Pos2D pos = rx_list.getObjectData<plot_tool::PositionRx>();
+        SetPosition(wxPoint(pos.x, pos.y));
+    }
+    else
+    {
+        gl_pane_->addData(rx_list, data_vec);
+    }
 }
