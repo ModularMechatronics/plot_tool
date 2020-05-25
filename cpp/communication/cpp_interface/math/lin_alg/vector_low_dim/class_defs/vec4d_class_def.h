@@ -13,6 +13,7 @@ template <typename T> struct Vec4D
     Vec4D(const T x_, const T y_, const T z_, const T w_);
     Vec4D();
     Vec4D(const T v_array[4]);
+    template <typename Y> Vec4D(const Vec4D<Y>& v);
 
     Vector<T> toVector() const;
     Vec4D<T> normalized() const;

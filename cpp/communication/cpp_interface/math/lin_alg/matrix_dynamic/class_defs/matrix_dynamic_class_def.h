@@ -15,6 +15,7 @@ public:
     Matrix();
     Matrix(const size_t num_rows, const size_t num_cols);
     Matrix(const Matrix<T>& m);
+    template <typename Y> Matrix(const Matrix<Y>& m);
     Matrix(const std::vector<std::vector<T>>& vm);
     Matrix(const std::initializer_list<std::initializer_list<T>>& il);
     Matrix(Matrix<T>&& m);

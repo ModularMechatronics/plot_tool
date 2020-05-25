@@ -27,6 +27,14 @@ template <typename T> Vec4D<T>::Vec4D(const T v_array[4])
     w = v_array[3];
 }
 
+template <typename T> template <typename Y> Vec4D<T>::Vec4D(const Vec4D<Y>& v)
+{
+    x = v.x;
+    y = v.y;
+    z = v.z;
+    w = v.w;
+}
+
 template <typename T> Vec4D<T> Vec4D<T>::normalized() const
 {
     return Vec4D<T>(x, y, z, w) / std::sqrt(x * x + y * y + z * z + w * w);

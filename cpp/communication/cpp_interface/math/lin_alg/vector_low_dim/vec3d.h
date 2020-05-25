@@ -30,6 +30,13 @@ template <typename T> Vec3D<T>::Vec3D(const T v_array[3])
     z = v_array[2];
 }
 
+template <typename T> template <typename Y> Vec3D<T>::Vec3D(const Vec3D<Y>& v)
+{
+    x = v.x;
+    y = v.y;
+    z = v.z;
+}
+
 template <typename T> CylindricalCoord<T> Vec3D<T>::toCylindricalVec() const
 {
     T phi;

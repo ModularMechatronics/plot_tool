@@ -23,6 +23,12 @@ template <typename T> Vec2D<T>::Vec2D(const T v_array[2])
     y = v_array[1];
 }
 
+template <typename T> template <typename Y> Vec2D<T>::Vec2D(const Vec2D<Y>& v)
+{
+    x = v.x;
+    y = v.y;
+}
+
 template <typename T> ComplexCoord<T> Vec2D<T>::toComplex() const
 {
     return ComplexCoord<T>(x, y);

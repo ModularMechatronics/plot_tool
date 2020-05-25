@@ -206,6 +206,21 @@ template <typename T> Matrix<T>::Matrix(const Matrix<T>& m) : is_allocated_(true
     }
 }
 
+template <typename T> template <typename Y> Matrix<T>::Matrix(const Matrix<Y>& m)
+{
+    num_rows_ = m.rows();
+    num_cols_ = m.cols();
+
+    DATA_ALLOCATION(data_, m.rows() * m.cols(), T, "Matrix");
+    for (size_t r = 0; r < m.rows(); r++)
+    {
+        for (size_t c = 0; c < m.cols(); c++)
+        {
+            data_[r * m.cols() + c] = m(r, c);
+        }
+    }
+}
+
 template <typename T> Matrix<T>::Matrix(const std::initializer_list<std::initializer_list<T>>& il)
 {
     ASSERT(il.size() > 0) << "Tried to initialize with empty vector matrix!";

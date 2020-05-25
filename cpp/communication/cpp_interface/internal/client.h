@@ -91,7 +91,7 @@ inline void sendTxList(const TxList& tx_list)
 }
 
 #define TYPE_ERROR_MSG \
-    "\n\n\033[31mTYPE ERROR: Only double supported for now!, Other types will come...\033[0m\n\n"
+    "\n\n\033[31mTYPE ERROR: Only double supported for now! Other types will come...\033[0m\n\n"
 
 }  // namespace plot_tool
 
