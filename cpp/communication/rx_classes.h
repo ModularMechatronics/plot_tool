@@ -28,7 +28,6 @@ public:
     }
 
     virtual size_t sizeOfData() const = 0;
-    virtual const char* getDataPointer() const = 0;
 };
 
 // Input buffer should start at first data byte
@@ -58,10 +57,6 @@ public:
     {
         return sizeof(char);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class NumBytesRx : public RxReceiveBase
@@ -85,10 +80,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(size_t);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -116,10 +107,6 @@ public:
     {
         return sizeof(DataStructure);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class BytesPerElementRx : public RxReceiveBase
@@ -143,10 +130,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(char);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -172,10 +155,6 @@ public:
     {
         return sizeof(DataType);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class NumElementsRx : public RxReceiveBase
@@ -199,10 +178,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(size_t);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -228,10 +203,6 @@ public:
     {
         return sizeof(Dimension2D);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class HasPayloadRx : public RxReceiveBase
@@ -255,10 +226,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(bool);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -284,10 +251,6 @@ public:
     {
         return sizeof(float);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class ElevationRx : public RxReceiveBase
@@ -312,10 +275,6 @@ public:
     {
         return sizeof(float);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class AxesDimensionsRx : public RxReceiveBase
@@ -339,10 +298,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(char);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -371,10 +326,6 @@ public:
     {
         return sizeof(std::pair<arl::Vec3D<double>, arl::Vec3D<double>>);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class LinewidthRx : public RxReceiveBase
@@ -398,10 +349,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(Linewidth);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -427,10 +374,6 @@ public:
     {
         return sizeof(FaceColor);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class EdgeColorRx : public RxReceiveBase
@@ -454,10 +397,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(EdgeColor);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -483,10 +422,6 @@ public:
     {
         return sizeof(Color);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class FigureNumRx : public RxReceiveBase
@@ -510,10 +445,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(char);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -539,10 +470,6 @@ public:
     {
         return sizeof(Alpha);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class LineStyleRx : public RxReceiveBase
@@ -566,10 +493,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(LineStyle);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -595,10 +518,6 @@ public:
     {
         return sizeof(Name);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class ColorMapRx : public RxReceiveBase
@@ -622,10 +541,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(ColorMap);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -651,10 +566,6 @@ public:
     {
         return sizeof(Function);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class PersistentRx : public RxReceiveBase
@@ -678,11 +589,6 @@ public:
     size_t sizeOfData() const override
     {
         return 0;
-    }
-
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
@@ -708,10 +614,6 @@ public:
     {
         return sizeof(PointSize);
     }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
-    }
 };
 
 class PositionRx : public RxReceiveBase
@@ -735,10 +637,6 @@ public:
     size_t sizeOfData() const override
     {
         return sizeof(Pos2D);
-    }
-    const char* getDataPointer() const override
-    {
-        return reinterpret_cast<const char* const>(&data_);
     }
 };
 
