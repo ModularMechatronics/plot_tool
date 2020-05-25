@@ -12,3 +12,16 @@ The code is currently a bit of a mess. Looking for people who can help make it b
 
 ### License
 The software is licensed with the MIT license.
+
+### Dependencies
+plot_tool uses wxWidgets for the GUI backend. This is only required for building, and not for running. The tested version is currently 3.1.3, which can be downloaded [here](https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.zip). It's important that wxWidgets is built with OpenGL.
+Configure wxWidgets with the following command:
+#### Ubuntu
+```./configure --with-opengl --with-gtk=2 --disable-shared --disable-dynamicloader --without-libpng --without-libjpeg --without-libtiff --without-libjbig --enable-svg=off```
+
+# Mac:
+```./configure --with-opengl --with-osx_cocoa --disable-shared --disable-dynamicloader --without-libpng --without-libjpeg --without-libtiff --without-libjbig --enable-svg=off```
+
+
+### Platforms
+The only tested platforms for now are Ubuntu 16.04 and newer version of MacOS. Pretty sure other version of Ubuntu work though.
