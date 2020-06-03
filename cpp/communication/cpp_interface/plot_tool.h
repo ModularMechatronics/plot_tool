@@ -1,5 +1,5 @@
-#ifndef PLOT_SERVER_H_
-#define PLOT_SERVER_H_
+#ifndef PLOT_TOOL_H_
+#define PLOT_TOOL_H_
 
 #include "internal/client.h"
 #include "shared/transmission.h"
@@ -22,6 +22,16 @@ inline void figure(const size_t figure_number)
     tx_list.append(Command::FUNCTION, Function::FIGURE);
     tx_list.append(Command::HAS_PAYLOAD, false);
     tx_list.append(Command::FIGURE_NUM, static_cast<char>(figure_number));
+
+    sendTxList(tx_list);
+}
+
+inline void setPosition(const int x, const int y)
+{
+    TxList tx_list;
+    tx_list.append(Command::FUNCTION, Function::POSITION);
+    tx_list.append(Command::HAS_PAYLOAD, false);
+    tx_list.append(Command::POS2D, Pos2D(x, y));
 
     sendTxList(tx_list);
 }

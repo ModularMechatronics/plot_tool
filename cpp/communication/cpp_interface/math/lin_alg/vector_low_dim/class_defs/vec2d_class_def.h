@@ -11,6 +11,7 @@ template <typename T> struct Vec2D
     Vec2D(const T x_, const T y_);
     Vec2D();
     Vec2D(const T v_array[2]);
+    template <typename Y> Vec2D(const Vec2D<Y>& v);
     Vector<T> toVector() const;
 
     ComplexCoord<T> toComplex() const;
