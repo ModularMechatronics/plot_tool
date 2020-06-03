@@ -12,6 +12,7 @@ template <typename T> struct Plane
 
     Plane(const T a_, const T b_, const T c_, const T d_);
     Plane(const Point3D<T>& point, const Vec3D<T>& normal_vector);
+    template <typename Y> Plane(const Plane<Y>& p);
     Plane();
 
     Plane<T> normalized() const;

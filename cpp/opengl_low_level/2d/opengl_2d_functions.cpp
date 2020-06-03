@@ -33,6 +33,20 @@ void setPointSize(const float point_size)
     glPointSize(point_size);
 }
 
+void drawPoints2D(const arl::Vectord& x_values, const arl::Vectord& y_values)
+{
+    assert(x_values.size() > 1);
+    assert(x_values.size() == y_values.size());
+
+    glBegin(GL_POINTS);
+    for (size_t k = 0; k < x_values.size(); k++)
+    {
+        glVertex2f(x_values(k), y_values(k));
+    }
+
+    glEnd();
+}
+
 void drawLine2D(const float x0, const float y0, const float x1, const float y1)
 {
     glBegin(GL_LINES);

@@ -31,6 +31,13 @@ void scatter3(const arl::Vectord& x, const arl::Vectord& y, const arl::Vectord& 
     drawPoints3D(x, y, z);
 }
 
+void scatter(const arl::Vectord& x, const arl::Vectord& y)
+{
+    assert(x.isAllocated() && (x.size() > 1));
+    assert(y.isAllocated() && (y.size() > 1));
+    drawPoints2D(x, y);
+}
+
 void surf(const arl::Matrixd& x,
           const arl::Matrixd& y,
           const arl::Matrixd& z,

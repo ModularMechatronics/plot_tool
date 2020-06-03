@@ -12,6 +12,7 @@ template <typename T> struct Line3D
     Vec3D<T> v;
 
     Line3D(const Point3D<T>& p_, const Vec3D<T>& v_);
+    template <typename Y> Line3D(const Line3D<Y>& l);
     Line3D();
 
     Vec3D<T> vectorNormalToLine() const;

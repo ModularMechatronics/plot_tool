@@ -11,7 +11,6 @@ template <typename T> struct Vec2D
     Vec2D(const T x_, const T y_);
     Vec2D();
     Vec2D(const T v_array[2]);
-    template <typename Y> Vec2D(const Vec2D<Y>& v);
     Vector<T> toVector() const;
 
     ComplexCoord<T> toComplex() const;
@@ -40,6 +39,7 @@ template <typename T> struct VecXY
     T y;
     VecXY() = default;
     VecXY(const T x_, const T y_) : x(x_), y(y_) {}
+    template <typename Y> VecXY(const VecXY<Y>& v) : x(v.x), y(v.y) {}
 };
 
 template <typename T> struct VecXZ
@@ -48,6 +48,7 @@ template <typename T> struct VecXZ
     T z;
     VecXZ() = default;
     VecXZ(const T x_, const T z_) : x(x_), z(z_) {}
+    template <typename Y> VecXZ(const VecXZ<Y>& v) : x(v.x), z(v.z) {}
 };
 
 template <typename T> struct VecYZ
@@ -56,6 +57,7 @@ template <typename T> struct VecYZ
     T z;
     VecYZ() = default;
     VecYZ(const T y_, const T z_) : y(y_), z(z_) {}
+    template <typename Y> VecYZ(const VecYZ<Y>& v) : y(v.y), z(v.z) {}
 };
 
 }  // namespace plot_tool

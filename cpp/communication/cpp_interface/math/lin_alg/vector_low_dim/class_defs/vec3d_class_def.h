@@ -10,9 +10,9 @@ template <typename T> struct Vec3D
     T z;
 
     Vec3D(const T x_, const T y_, const T z_);
+    template <typename Y> Vec3D(const Vec3D<Y>& v);
     Vec3D();
     Vec3D(const T v_array[3]);
-    template <typename Y> Vec3D(const Vec3D<Y>& v);
     Vector<T> toVector() const;
 
     CylindricalCoord<T> toCylindricalVec() const;
