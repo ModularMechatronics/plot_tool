@@ -29,6 +29,14 @@ template <typename T> Plane<T>::Plane(const Point3D<T>& point, const Vec3D<T>& n
 
 template <typename T> Plane<T>::Plane() {}
 
+template <typename T> template <typename Y> Plane<T>::Plane(const Plane<Y>& p)
+{
+    a = p.a;
+    b = p.b;
+    c = p.c;
+    d = p.d;
+}
+
 template <typename T> Plane<T> Plane<T>::normalized() const
 {
     Vec3D<T> normal_vec = this->normal();

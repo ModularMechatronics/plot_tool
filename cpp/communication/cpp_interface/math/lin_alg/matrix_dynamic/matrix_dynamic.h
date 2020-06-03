@@ -71,6 +71,24 @@ template <typename T> Matrix<T>::Matrix(Matrix<T>&& m)
     m.setInternalData(nullptr, 0, 0);
 }
 
+template <typename T>
+template <typename Y>
+Matrix<T>::Matrix(const Matrix<Y>& m) : is_allocated_(true)
+{
+    ASSERT(m.isAllocated()) << "Input matrix not allocated!";
+    num_rows_ = m.rows();
+    num_cols_ = m.cols();
+
+    DATA_ALLOCATION(data_, m.rows() * m.cols(), T, "Matrix");
+    for (size_t r = 0; r < m.rows(); r++)
+    {
+        for (size_t c = 0; c < m.cols(); c++)
+        {
+            data_[r * m.cols() + c] = m(r, c);
+        }
+    }
+}
+
 template <typename T> Matrix<T>&& Matrix<T>::move()
 {
     return std::move(*this);
@@ -192,21 +210,6 @@ Matrix<T>::Matrix(const size_t num_rows, const size_t num_cols) : is_allocated_(
 }
 
 template <typename T> Matrix<T>::Matrix(const Matrix<T>& m) : is_allocated_(true)
-{
-    num_rows_ = m.rows();
-    num_cols_ = m.cols();
-
-    DATA_ALLOCATION(data_, m.rows() * m.cols(), T, "Matrix");
-    for (size_t r = 0; r < m.rows(); r++)
-    {
-        for (size_t c = 0; c < m.cols(); c++)
-        {
-            data_[r * m.cols() + c] = m(r, c);
-        }
-    }
-}
-
-template <typename T> template <typename Y> Matrix<T>::Matrix(const Matrix<Y>& m)
 {
     num_rows_ = m.rows();
     num_cols_ = m.cols();

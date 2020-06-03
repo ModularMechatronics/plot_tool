@@ -16,5 +16,6 @@ void setPointSize(const float point_size);
 
 void drawLine2D(const float x0, const float y0, const float x1, const float y1);
 void drawLines2D(const arl::Vectord& x_values, const arl::Vectord& y_values);
+void drawPoints2D(const arl::Vectord& x_values, const arl::Vectord& y_values);
 
 #endif

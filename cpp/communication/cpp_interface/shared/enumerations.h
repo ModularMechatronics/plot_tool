@@ -13,6 +13,7 @@ enum class Function : uint8_t
     GRID_OFF,
     PLOT2,
     PLOT3,
+    SCATTER2,
     SCATTER3,
     LINE_BETWEEN_POINTS_3D,
     POLYGON_FROM_4_POINTS,

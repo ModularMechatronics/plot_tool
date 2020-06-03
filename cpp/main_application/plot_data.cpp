@@ -74,6 +74,10 @@ void PlotDataHandler::addData(const plot_tool::RxList& rx_list, const std::vecto
             plot_datas_.push_back(dynamic_cast<PlotObjectBase*>(new Scatter3D(rx_list, data_vec)));
 
             break;
+        case plot_tool::Function::SCATTER2:
+            plot_datas_.push_back(dynamic_cast<PlotObjectBase*>(new Scatter2D(rx_list, data_vec)));
+
+            break;
         default:
             EXIT() << "Unsupported function!";
             break;

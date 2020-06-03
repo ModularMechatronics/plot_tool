@@ -11,6 +11,7 @@
 void plot(const arl::Vectord& x, const arl::Vectord& y);
 void plot3(const arl::Vectord& x, const arl::Vectord& y, const arl::Vectord& z);
 void scatter3(const arl::Vectord& x, const arl::Vectord& y, const arl::Vectord& z);
+void scatter(const arl::Vectord& x, const arl::Vectord& y);
 
 void drawGrid3D(const arl::Matrixd& x, const arl::Matrixd& y, const arl::Matrixd& z);
 void surf(const arl::Matrixd& x,

@@ -15,6 +15,12 @@ template <typename T> Line3D<T>::Line3D(const Point3D<T>& p_, const Vec3D<T>& v_
 
 template <typename T> Line3D<T>::Line3D() {}
 
+template <typename T> template <typename Y> Line3D<T>::Line3D(const Line3D<Y>& l)
+{
+    p = l.p;
+    v = l.v;
+}
+
 template <typename T> Vec3D<T> Line3D<T>::vectorNormalToLine() const
 {
     Vec3D<T> vn;
