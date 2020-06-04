@@ -23,6 +23,9 @@ int main()
     double phi = 0.0;
 
     plot_tool::figure(1);
+    plot_tool::setPosition(0, 22);
+    plot_tool::figure(2);
+    plot_tool::setPosition(600, 22);
 
     double x1 = 1.0;
     for (size_t k = 0; k < 500; k++)
