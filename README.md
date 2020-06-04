@@ -9,7 +9,7 @@ An application runnable on different platforms, to which you can send visualizat
 
 ### Example
 With just a few lines of code you can bring data visualization to your application, without heavy integration of big and slow graphical frameworks.
-```
+```cpp
 #include <plot_tool.h>
 
 using namespace plot_tool;
