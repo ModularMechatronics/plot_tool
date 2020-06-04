@@ -76,6 +76,29 @@ Surf::Surf(const plot_tool::RxList& rx_list, const std::vector<char*> data_vec)
         edge_color_.green = c.green;
         edge_color_.blue = c.blue;
     }
+    if (rx_list.hasKey(Command::COLOR_MAP))
+    {
+        face_color_set_ = false;
+        ColorMap cm = rx_list.getObjectData<ColorMapRx>();
+        switch (cm.data)
+        {
+            case ColorMap::RAINBOW:
+                color_map_ = arl::color_maps::rainbowf;
+                break;
+            case ColorMap::MAGMA:
+                color_map_ = arl::color_maps::magmaf;
+                break;
+            case ColorMap::VIRIDIS:
+                color_map_ = arl::color_maps::viridisf;
+                break;
+            case ColorMap::JET:
+                color_map_ = arl::color_maps::jetf;
+                break;
+            default:
+                color_map_ = arl::color_maps::jetf;
+                break;
+        }
+    }
 
     line_width_ =
         rx_list.hasKey(Command::LINEWIDTH) ? rx_list.getObjectData<LinewidthRx>().data : 1.0f;
@@ -111,7 +134,7 @@ void Surf::visualize() const
     }
     else
     {
-        surf(x_mat, y_mat, z_mat, {min_vec.y, max_vec.y}, arl::color_maps::jetf);
+        surf(x_mat, y_mat, z_mat, {min_vec.y, max_vec.y}, color_map_);
     }
 
     setColor(edge_color_);
