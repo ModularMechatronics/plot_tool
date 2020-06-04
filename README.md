@@ -1,12 +1,15 @@
 # plot_tool
 A data visualization tool to speed up the development process.
 
-### Ambition
+### Vision
 An application runnable on different platforms, to which you can send visualization commands through IPC, from different programming languages. The only required integration to the 'Application Under Test' shall be including a header only library, thus eliminating the need for integrating and running a 'heavy' GUI/data visualization library into your application. 
+
+### Demonstration
+![](media/demo.gif)
 
 ### Example
 With just a few lines of code you can bring data visualization to your application, without heavy integration of big and slow graphical frameworks.
-```
+```cpp
 #include <plot_tool.h>
 
 using namespace plot_tool;
@@ -45,8 +48,8 @@ axis({-4.0, -1.0, -12.0}, {12.0, 7.0, 4.0});
 deinitialize();
 ```
 
-### Demonstration
-https://youtu.be/Or2qAsF1gD8
+This produces the following output:
+![Plot0](/media/plot01.png)
 
 ### State of the code
 The code is currently a bit of a mess. C++11 is the only supported interface language for now. Looking for people who can help make it better, add functionality and clean up the code.
@@ -66,3 +69,7 @@ Configure wxWidgets with the following command:
 
 ### Platforms
 The only tested platforms for now are Ubuntu 16.04 and newer version of MacOS. Pretty sure other version of Ubuntu work though.
+
+
+### TODO
+- Write TODO list
