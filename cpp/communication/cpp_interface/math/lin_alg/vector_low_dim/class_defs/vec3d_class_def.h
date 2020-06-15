@@ -1,5 +1,5 @@
-#ifndef VEC3D_CLASS_H_
-#define VEC3D_CLASS_H_
+#ifndef PLOT_TOOL_VEC3D_CLASS_H_
+#define PLOT_TOOL_VEC3D_CLASS_H_
 
 namespace plot_tool
 {

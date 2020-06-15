@@ -1,5 +1,5 @@
-#ifndef SPHERICAL_CLASS_H_
-#define SPHERICAL_CLASS_H_
+#ifndef PLOT_TOOL_SPHERICAL_CLASS_H_
+#define PLOT_TOOL_SPHERICAL_CLASS_H_
 
 namespace plot_tool
 {

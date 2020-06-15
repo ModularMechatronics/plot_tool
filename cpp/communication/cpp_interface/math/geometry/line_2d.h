@@ -1,6 +1,6 @@
 
-#ifndef LINE_2D_H_
-#define LINE_2D_H_
+#ifndef PLOT_TOOL_LINE_2D_H_
+#define PLOT_TOOL_LINE_2D_H_
 
 #include <cmath>
 #include <utility>

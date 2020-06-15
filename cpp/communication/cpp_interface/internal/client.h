@@ -1,5 +1,5 @@
-#ifndef CLIENT_H_
-#define CLIENT_H_
+#ifndef PLOT_TOOL_CLIENT_H_
+#define PLOT_TOOL_CLIENT_H_
 
 #include <netinet/tcp.h>
 #include <sys/socket.h>

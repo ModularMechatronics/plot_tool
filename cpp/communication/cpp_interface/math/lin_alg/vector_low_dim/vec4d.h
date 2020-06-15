@@ -1,6 +1,5 @@
-
-#ifndef VEC4D_H_
-#define VEC4D_H_
+#ifndef PLOT_TOOL_VEC4D_H_
+#define PLOT_TOOL_VEC4D_H_
 
 #include <cmath>
 

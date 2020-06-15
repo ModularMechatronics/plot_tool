@@ -1,5 +1,5 @@
-#ifndef ROLL_PITCH_YAW_CLASS_H_
-#define ROLL_PITCH_YAW_CLASS_H_
+#ifndef PLOT_TOOL_ROLL_PITCH_YAW_CLASS_H_
+#define PLOT_TOOL_ROLL_PITCH_YAW_CLASS_H_
 
 namespace plot_tool
 {

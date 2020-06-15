@@ -1,5 +1,5 @@
-#ifndef SPHERICAL_H_
-#define SPHERICAL_H_
+#ifndef PLOT_TOOL_SPHERICAL_H_
+#define PLOT_TOOL_SPHERICAL_H_
 
 #include <cmath>
 #include <vector>

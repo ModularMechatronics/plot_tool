@@ -1,6 +1,5 @@
-
-#ifndef VECTOR_MATH_FUNCTIONS_H_
-#define VECTOR_MATH_FUNCTIONS_H_
+#ifndef PLOT_TOOL_VECTOR_MATH_FUNCTIONS_H_
+#define PLOT_TOOL_VECTOR_MATH_FUNCTIONS_H_
 
 #include <cmath>
 #include <cstdarg>

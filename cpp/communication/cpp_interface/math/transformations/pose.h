@@ -1,6 +1,5 @@
-
-#ifndef POSE_H
-#define POSE_H
+#ifndef PLOT_TOOL_POSE_H
+#define PLOT_TOOL_POSE_H
 
 #include <cmath>
 #include <vector>

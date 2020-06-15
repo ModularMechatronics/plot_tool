@@ -1,6 +1,6 @@
 
-#ifndef PLANE_H_
-#define PLANE_H_
+#ifndef PLOT_TOOL_PLANE_H_
+#define PLOT_TOOL_PLANE_H_
 
 #include <cmath>
 #include <utility>

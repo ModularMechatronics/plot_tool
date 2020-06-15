@@ -1,5 +1,5 @@
-#ifndef MATH_TYPE_DEFINITIONS_H_
-#define MATH_TYPE_DEFINITIONS_H_
+#ifndef PLOT_TOOL_MATH_TYPE_DEFINITIONS_H_
+#define PLOT_TOOL_MATH_TYPE_DEFINITIONS_H_
 
 #include "math/math_core.h"
 

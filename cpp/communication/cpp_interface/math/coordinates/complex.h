@@ -1,5 +1,5 @@
-#ifndef COMPLEX_H_
-#define COMPLEX_H_
+#ifndef PLOT_TOOL_COMPLEX_H_
+#define PLOT_TOOL_COMPLEX_H_
 
 #include <cmath>
 #include <vector>

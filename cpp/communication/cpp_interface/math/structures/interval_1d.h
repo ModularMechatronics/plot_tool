@@ -1,5 +1,5 @@
-#ifndef INTERVAL_1D_H_
-#define INTERVAL_1D_H_
+#ifndef PLOT_TOOL_INTERVAL_1D_H_
+#define PLOT_TOOL_INTERVAL_1D_H_
 
 #include <cmath>
 

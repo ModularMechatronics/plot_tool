@@ -1,5 +1,11 @@
-#ifndef COMMUNICATION_UTILITIES_H_
-#define COMMUNICATION_UTILITIES_H_
+#ifndef PLOT_TOOL_COMMUNICATION_UTILITIES_H_
+#define PLOT_TOOL_COMMUNICATION_UTILITIES_H_
+
+#include <netinet/tcp.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <sys/un.h>
+#include <unistd.h>
 
 #include <chrono>
 #include <iostream>
@@ -7,12 +13,6 @@
 #include <thread>
 #include <utility>
 #include <vector>
-
-#include <netinet/tcp.h>
-#include <sys/socket.h>
-#include <sys/types.h>
-#include <sys/un.h>
-#include <unistd.h>
 
 #include "shared/transmission.h"
 

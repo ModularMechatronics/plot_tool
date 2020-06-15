@@ -1,5 +1,5 @@
-#ifndef PLOT_ATTRIBUTES_H_
-#define PLOT_ATTRIBUTES_H_
+#ifndef PLOT_TOOL_PLOT_ATTRIBUTES_H_
+#define PLOT_TOOL_PLOT_ATTRIBUTES_H_
 
 #include <cassert>
 #include <cstring>

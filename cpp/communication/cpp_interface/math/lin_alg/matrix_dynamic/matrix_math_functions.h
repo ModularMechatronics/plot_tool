@@ -1,6 +1,6 @@
 
-#ifndef MATRIX_MATH_FUNCTIONS_H_
-#define MATRIX_MATH_FUNCTIONS_H_
+#ifndef PLOT_TOOL_MATRIX_MATH_FUNCTIONS_H_
+#define PLOT_TOOL_MATRIX_MATH_FUNCTIONS_H_
 
 #include <cmath>
 #include <cstdarg>

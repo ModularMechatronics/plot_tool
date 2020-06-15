@@ -1,5 +1,5 @@
-#ifndef VECTOR_DYNAMIC_CLASS_H_
-#define VECTOR_DYNAMIC_CLASS_H_
+#ifndef PLOT_TOOL_VECTOR_DYNAMIC_CLASS_H_
+#define PLOT_TOOL_VECTOR_DYNAMIC_CLASS_H_
 
 #include <iterator>
 

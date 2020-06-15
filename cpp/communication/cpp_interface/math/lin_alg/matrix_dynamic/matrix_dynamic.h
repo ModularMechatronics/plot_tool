@@ -1,6 +1,6 @@
 
-#ifndef MATRIX_DYNAMIC_H_
-#define MATRIX_DYNAMIC_H_
+#ifndef PLOT_TOOL_MATRIX_DYNAMIC_H_
+#define PLOT_TOOL_MATRIX_DYNAMIC_H_
 
 #include <cmath>
 

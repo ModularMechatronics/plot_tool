@@ -1,6 +1,6 @@
 
-#ifndef SPHERE_H_
-#define SPHERE_H_
+#ifndef PLOT_TOOL_SPHERE_H_
+#define PLOT_TOOL_SPHERE_H_
 
 #include <cmath>
 #include <vector>

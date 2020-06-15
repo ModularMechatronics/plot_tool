@@ -1,5 +1,5 @@
-#ifndef COMPLEX_CLASS_H_
-#define COMPLEX_CLASS_H_
+#ifndef PLOT_TOOL_COMPLEX_CLASS_H_
+#define PLOT_TOOL_COMPLEX_CLASS_H_
 
 namespace plot_tool
 {

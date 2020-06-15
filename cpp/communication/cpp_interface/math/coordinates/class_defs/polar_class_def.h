@@ -1,5 +1,5 @@
-#ifndef POLAR_CLASS_H_
-#define POLAR_CLASS_H_
+#ifndef PLOT_TOOL_POLAR_CLASS_H_
+#define PLOT_TOOL_POLAR_CLASS_H_
 
 namespace plot_tool
 {

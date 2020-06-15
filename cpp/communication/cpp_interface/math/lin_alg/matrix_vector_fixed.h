@@ -1,5 +1,5 @@
-#ifndef MATRIX_VECTOR_FIXED_H_
-#define MATRIX_VECTOR_FIXED_H_
+#ifndef PLOT_TOOL_MATRIX_VECTOR_FIXED_H_
+#define PLOT_TOOL_MATRIX_VECTOR_FIXED_H_
 
 #include "math/matrix_fixed.h"
 #include "math/vector_fixed.h"

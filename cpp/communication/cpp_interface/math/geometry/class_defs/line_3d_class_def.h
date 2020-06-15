@@ -1,5 +1,5 @@
-#ifndef LINE_3D_CLASS_H_
-#define LINE_3D_CLASS_H_
+#ifndef PLOT_TOOL_LINE_3D_CLASS_H_
+#define PLOT_TOOL_LINE_3D_CLASS_H_
 
 namespace plot_tool
 {

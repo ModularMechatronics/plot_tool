@@ -1,5 +1,5 @@
-#ifndef END_INDEX_H_
-#define END_INDEX_H_
+#ifndef PLOT_TOOL_END_INDEX_H_
+#define PLOT_TOOL_END_INDEX_H_
 
 #include <cassert>
 

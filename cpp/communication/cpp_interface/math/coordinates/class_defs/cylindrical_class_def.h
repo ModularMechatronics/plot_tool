@@ -1,5 +1,5 @@
-#ifndef CYLINDRICAL_CLASS_H_
-#define CYLINDRICAL_CLASS_H_
+#ifndef PLOT_TOOL_CYLINDRICAL_CLASS_H_
+#define PLOT_TOOL_CYLINDRICAL_CLASS_H_
 
 namespace plot_tool
 {

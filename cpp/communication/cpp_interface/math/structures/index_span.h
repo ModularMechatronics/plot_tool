@@ -1,5 +1,5 @@
-#ifndef INDEX_SPAN_H_
-#define INDEX_SPAN_H_
+#ifndef PLOT_TOOL_INDEX_SPAN_H_
+#define PLOT_TOOL_INDEX_SPAN_H_
 
 #include <stdio.h>
 

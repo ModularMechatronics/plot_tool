@@ -1,5 +1,5 @@
-#ifndef VECTOR_FIXED_H_
-#define VECTOR_FIXED_H_
+#ifndef PLOT_TOOL_VECTOR_FIXED_H_
+#define PLOT_TOOL_VECTOR_FIXED_H_
 
 #include "math/math_core.h"
 

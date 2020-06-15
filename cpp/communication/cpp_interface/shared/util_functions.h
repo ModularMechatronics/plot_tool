@@ -1,5 +1,5 @@
-#ifndef UTIL_FUNCTIONS_H_
-#define UTIL_FUNCTIONS_H_
+#ifndef PLOT_TOOL_UTIL_FUNCTIONS_H_
+#define PLOT_TOOL_UTIL_FUNCTIONS_H_
 
 #include <cstdlib>
 

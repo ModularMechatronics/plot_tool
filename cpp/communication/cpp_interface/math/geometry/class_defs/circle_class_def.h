@@ -1,5 +1,5 @@
-#ifndef CIRCLE_CLASS_H_
-#define CIRCLE_CLASS_H_
+#ifndef PLOT_TOOL_CIRCLE_CLASS_H_
+#define PLOT_TOOL_CIRCLE_CLASS_H_
 
 #include <utility>
 

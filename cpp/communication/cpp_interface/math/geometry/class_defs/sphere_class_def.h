@@ -1,5 +1,5 @@
-#ifndef SPHERE_CLASS_H_
-#define SPHERE_CLASS_H_
+#ifndef PLOT_TOOL_SPHERE_CLASS_H_
+#define PLOT_TOOL_SPHERE_CLASS_H_
 
 #include <utility>
 

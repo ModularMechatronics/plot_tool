@@ -1,5 +1,5 @@
-#ifndef POLAR_H_
-#define POLAR_H_
+#ifndef PLOT_TOOL_POLAR_H_
+#define PLOT_TOOL_POLAR_H_
 
 #include <cmath>
 #include <vector>

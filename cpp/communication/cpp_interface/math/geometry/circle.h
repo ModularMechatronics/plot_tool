@@ -1,6 +1,6 @@
 
-#ifndef CIRCLE_H_
-#define CIRCLE_H_
+#ifndef PLOT_TOOL_CIRCLE_H_
+#define PLOT_TOOL_CIRCLE_H_
 
 #include <cmath>
 #include <vector>

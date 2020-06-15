@@ -1,6 +1,5 @@
-
-#ifndef AXIS_ANGLE_H_
-#define AXIS_ANGLE_H_
+#ifndef PLOT_TOOL_AXIS_ANGLE_H_
+#define PLOT_TOOL_AXIS_ANGLE_H_
 
 #include "logging.h"
 #include "math/lin_alg.h"

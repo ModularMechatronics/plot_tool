@@ -1,5 +1,5 @@
-#ifndef MATH_MACROS_H_
-#define MATH_MACROS_H_
+#ifndef PLOT_TOOL_MATH_MACROS_H_
+#define PLOT_TOOL_MATH_MACROS_H_
 
 #include "logging.h"
 

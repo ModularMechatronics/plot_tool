@@ -1,6 +1,5 @@
-
-#ifndef QUATERNION_H_
-#define QUATERNION_H_
+#ifndef PLOT_TOOL_QUATERNION_H_
+#define PLOT_TOOL_QUATERNION_H_
 
 #include <cmath>
 

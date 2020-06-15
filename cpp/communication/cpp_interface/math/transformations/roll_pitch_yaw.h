@@ -1,6 +1,5 @@
-
-#ifndef ROLL_PITCH_YAW_H_
-#define ROLL_PITCH_YAW_H_
+#ifndef PLOT_TOOL_ROLL_PITCH_YAW_H_
+#define PLOT_TOOL_ROLL_PITCH_YAW_H_
 
 #include <cmath>
 
