@@ -61,16 +61,16 @@ MatrixFixed<R, C, T>::MatrixFixed(const MatrixFixed<R, C, T>& mf) : num_rows_(R)
 template <size_t R, size_t C, typename T>
 T& MatrixFixed<R, C, T>::operator()(const size_t r, const size_t c)
 {
-    ASSERT(r < num_rows_) << "Tried to access element outside of num_rows_!";
-    ASSERT(c < num_cols_) << "Tried to access element outside of num_cols_!";
+    PT_ASSERT(r < num_rows_) << "Tried to access element outside of num_rows_!";
+    PT_ASSERT(c < num_cols_) << "Tried to access element outside of num_cols_!";
     return data_[r * num_cols_ + c];
 }
 
 template <size_t R, size_t C, typename T>
 const T& MatrixFixed<R, C, T>::operator()(const size_t r, const size_t c) const
 {
-    ASSERT(r < num_rows_) << "Tried to access element outside of num_rows_!";
-    ASSERT(c < num_cols_) << "Tried to access element outside of num_cols_!";
+    PT_ASSERT(r < num_rows_) << "Tried to access element outside of num_rows_!";
+    PT_ASSERT(c < num_cols_) << "Tried to access element outside of num_cols_!";
     return data_[r * num_cols_ + c];
 }
 
@@ -172,12 +172,13 @@ template <size_t R, size_t C, typename T>
 MatrixFixed<R, C, T>::MatrixFixed(const std::initializer_list<std::initializer_list<T>>& il)
     : num_rows_(R), num_cols_(C)
 {
-    ASSERT(il.size() == R) << "Incorrect number of rows for templated matrix size!";
-    ASSERT(il.begin()[0].size() == C) << "Incorrect number of columns for templated matrix size!";
+    PT_ASSERT(il.size() == R) << "Incorrect number of rows for templated matrix size!";
+    PT_ASSERT(il.begin()[0].size() == C)
+        << "Incorrect number of columns for templated matrix size!";
 
     for (size_t r = 0; r < il.size(); r++)
     {
-        ASSERT(il.begin()[0].size() == il.begin()[r].size())
+        PT_ASSERT(il.begin()[0].size() == il.begin()[r].size())
             << "All row vectors in input std vectors do not have the same size!";
     }
 

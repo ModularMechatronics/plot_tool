@@ -148,9 +148,9 @@ template <typename T> Vec2D<T> operator-(const Vec2D<T>& v0, const Vec2D<T>& v1)
 
 template <typename T> Vec2D<T> operator*(const Matrix<T>& m, const Vec2D<T>& v)
 {
-    ASSERT(m.isAllocated()) << "Matrix not allocated!";
-    ASSERT(m.rows() == 2) << "Matrix dimension mismatch!";
-    ASSERT(m.cols() == 2) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.isAllocated()) << "Matrix not allocated!";
+    PT_ASSERT(m.rows() == 2) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.cols() == 2) << "Matrix dimension mismatch!";
     Vec2D<T> res;
     res.x = m(0, 0) * v.x + m(0, 1) * v.y;
     res.y = m(1, 0) * v.x + m(1, 1) * v.y;
@@ -159,9 +159,9 @@ template <typename T> Vec2D<T> operator*(const Matrix<T>& m, const Vec2D<T>& v)
 
 template <typename T> Vec2D<T> operator*(const Vec2D<T>& v, const Matrix<T>& m)
 {
-    ASSERT(m.isAllocated()) << "Matrix not allocated!";
-    ASSERT(m.rows() == 2) << "Matrix dimension mismatch!";
-    ASSERT(m.cols() == 2) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.isAllocated()) << "Matrix not allocated!";
+    PT_ASSERT(m.rows() == 2) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.cols() == 2) << "Matrix dimension mismatch!";
     Vec2D<T> res;
     res.x = v.x * m(0, 0) + v.y * m(1, 0);
     res.y = v.x * m(0, 1) + v.y * m(1, 1);

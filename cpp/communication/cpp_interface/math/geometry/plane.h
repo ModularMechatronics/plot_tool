@@ -88,7 +88,7 @@ template <typename T> Line3D<T> Plane<T>::projectLineOntoPlane(const Line3D<T>& 
     const T angle_between_vectors = line_vector.angleBetweenVectors();
     if (std::fabs(angle_between_vectors) < 1e-8)
     {
-        LOG_WARNING() << "Line and plane normal vector almost parallel, degenerate case!";
+        PT_LOG_WARNING() << "Line and plane normal vector almost parallel, degenerate case!";
     }
     const Point3D<T> p0 = line.p;
     const Point3D<T> p1 = line.p + line.v.normalized();

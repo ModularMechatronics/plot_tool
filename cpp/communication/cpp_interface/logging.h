@@ -382,40 +382,40 @@ inline void showThreadId(const bool show_thread_id)
 }  // namespace logging
 }  // namespace plot_tool
 
-#define LOG()                                                                             \
+#define PT_LOG()                                                                          \
     plot_tool::logging::internal::Log(                                                    \
         plot_tool::logging::internal::MessageSeverity::LOG, __FILE__, __func__, __LINE__) \
         .getStream()
-#define LOG_INFO()                                                                         \
+#define PT_LOG_INFO()                                                                      \
     plot_tool::logging::internal::Log(                                                     \
         plot_tool::logging::internal::MessageSeverity::INFO, __FILE__, __func__, __LINE__) \
         .getStream()
-#define LOG_DEBUG()                                                                         \
+#define PT_LOG_DEBUG()                                                                      \
     plot_tool::logging::internal::Log(                                                      \
         plot_tool::logging::internal::MessageSeverity::DEBUG, __FILE__, __func__, __LINE__) \
         .getStream()
-#define LOG_WARNING()                                                                         \
+#define PT_LOG_WARNING()                                                                      \
     plot_tool::logging::internal::Log(                                                        \
         plot_tool::logging::internal::MessageSeverity::WARNING, __FILE__, __func__, __LINE__) \
         .getStream()
-#define LOG_TRACE()                                                                         \
+#define PT_LOG_TRACE()                                                                      \
     plot_tool::logging::internal::Log(                                                      \
         plot_tool::logging::internal::MessageSeverity::TRACE, __FILE__, __func__, __LINE__) \
         .getStream()
-#define LOG_ERROR()                                                                         \
+#define PT_LOG_ERROR()                                                                      \
     plot_tool::logging::internal::Log(                                                      \
         plot_tool::logging::internal::MessageSeverity::ERROR, __FILE__, __func__, __LINE__) \
         .getStream()
-#define LOG_FATAL()                                                                         \
+#define PT_LOG_FATAL()                                                                      \
     plot_tool::logging::internal::Log(                                                      \
         plot_tool::logging::internal::MessageSeverity::FATAL, __FILE__, __func__, __LINE__) \
         .getStream()
 
-#define PRINT() plot_tool::logging::internal::Log().getStream()
+#define PT_PRINT() plot_tool::logging::internal::Log().getStream()
 
-#define PRINT_COND(cond) plot_tool::logging::internal::Log(cond).getStream()
+#define PT_PRINT_COND(cond) plot_tool::logging::internal::Log(cond).getStream()
 
-#define ASSERT(cond)                                                                            \
+#define PT_ASSERT(cond)                                                                         \
     plot_tool::logging::internal::Log(plot_tool::logging::internal::MessageSeverity::ASSERTION, \
                                       __FILE__,                                                 \
                                       __func__,                                                 \
@@ -423,14 +423,14 @@ inline void showThreadId(const bool show_thread_id)
                                       cond)                                                     \
         .getStream()
 
-#define EXIT(cond)                                                                                \
+#define PT_EXIT(cond)                                                                             \
     plot_tool::logging::internal::Log(                                                            \
         plot_tool::logging::internal::MessageSeverity::EXIT, __FILE__, __func__, __LINE__, false) \
         .getStream()
 
-#define TIC() plot_tool::timing::startTimer()
+#define PT_TIC() plot_tool::timing::startTimer()
 
-#define TOC_MS(msg)                                                                           \
+#define PT_TOC_MS(msg)                                                                        \
     {                                                                                         \
         plot_tool::timing::stopTimer();                                                       \
         int64_t delta_seconds =                                                               \
@@ -438,10 +438,10 @@ inline void showThreadId(const bool show_thread_id)
         int64_t delta_microseconds = plot_tool::timing::_Var_stop_micro_seconds() -           \
                                      plot_tool::timing::_Var_start_micro_seconds();           \
         int64_t delta_time = delta_seconds * 1000000 + delta_microseconds;                    \
-        LOG_DEBUG() << msg << static_cast<float>(delta_time) / 1000.0f << " ms";              \
+        PT_LOG_DEBUG() << msg << static_cast<float>(delta_time) / 1000.0f << " ms";           \
     }
 
-#define TOC_US(msg)                                                                           \
+#define PT_TOC_US(msg)                                                                        \
     {                                                                                         \
         plot_tool::timing::stopTimer();                                                       \
         int64_t delta_seconds =                                                               \
@@ -449,7 +449,7 @@ inline void showThreadId(const bool show_thread_id)
         int64_t delta_microseconds = plot_tool::timing::_Var_stop_micro_seconds() -           \
                                      plot_tool::timing::_Var_start_micro_seconds();           \
         int64_t delta_time = delta_seconds * 1000000 + delta_microseconds;                    \
-        LOG_DEBUG() << msg << delta_time << " us";                                            \
+        PT_LOG_DEBUG() << msg << delta_time << " us";                                         \
     }
 
 #endif

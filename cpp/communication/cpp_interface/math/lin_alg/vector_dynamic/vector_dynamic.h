@@ -36,7 +36,7 @@ template <typename T> Vector<T>::Vector(const Vector<T>& v) : is_allocated_(true
 
 template <typename T> Vector<T>::Vector(Vector<T>&& v)
 {
-    ASSERT(v.isAllocated()) << "Input vector not allocated!";
+    PT_ASSERT(v.isAllocated()) << "Input vector not allocated!";
     data_ = v.getDataPointer();
     vector_length_ = v.size();
     is_allocated_ = true;
@@ -48,7 +48,7 @@ template <typename T> Vector<T>& Vector<T>::operator=(Vector<T>&& v)
 {
     if (this != &v)
     {
-        ASSERT(v.isAllocated()) << "Input vector not allocated before assignment!";
+        PT_ASSERT(v.isAllocated()) << "Input vector not allocated before assignment!";
 
         if (is_allocated_)
         {
@@ -77,7 +77,7 @@ template <typename T> Vector<T>::~Vector()
 
 template <typename T> Vector<T>& Vector<T>::operator=(const Vector<T>& v)
 {
-    ASSERT(v.isAllocated()) << "Input vector not allocated before assignment!";
+    PT_ASSERT(v.isAllocated()) << "Input vector not allocated before assignment!";
 
     if (this != &v)
     {
@@ -147,7 +147,7 @@ template <typename T> template <typename Y> Vector<T>& Vector<T>::operator=(cons
 
 template <typename T> Vector<T>::Vector(const std::initializer_list<T>& il)
 {
-    ASSERT(il.size() > 0) << "Tried to initialize with empty vector!";
+    PT_ASSERT(il.size() > 0) << "Tried to initialize with empty vector!";
 
     DATA_ALLOCATION(data_, il.size(), T, "Vector");
     is_allocated_ = true;
@@ -244,8 +244,8 @@ template <typename T> void Vector<T>::pushFront(const T& new_value)
 
 template <typename T> void Vector<T>::insertAtIndex(const T& new_value, const size_t idx)
 {
-    ASSERT(is_allocated_) << "Vector not allocated!";
-    ASSERT(idx < vector_length_);
+    PT_ASSERT(is_allocated_) << "Vector not allocated!";
+    PT_ASSERT(idx < vector_length_);
 
     T* tmp_ptr;
     DATA_ALLOCATION(tmp_ptr, vector_length_ + 1, T, "Vector");
@@ -348,9 +348,9 @@ Vector<T> Vector<T>::operator()(const Vector<Y>& idx_vector) const
 
 template <typename T> Vector<T> Vector<T>::operator()(const IndexSpan& idx_span) const
 {
-    ASSERT(idx_span.from < vector_length_) << "Lower index exceeds vector size!";
-    ASSERT(idx_span.from < vector_length_) << "Upper index exceeds vector size!";
-    ASSERT(idx_span.from <= idx_span.to) << "Lower index larger than upper index!";
+    PT_ASSERT(idx_span.from < vector_length_) << "Lower index exceeds vector size!";
+    PT_ASSERT(idx_span.from < vector_length_) << "Upper index exceeds vector size!";
+    PT_ASSERT(idx_span.from <= idx_span.to) << "Lower index larger than upper index!";
     const size_t new_vector_length = idx_span.to - idx_span.from + 1;
     Vector<T> vres(new_vector_length);
 
@@ -424,7 +424,7 @@ template <typename T> Vector<size_t> Vector<T>::findIndicesOf(const T& item_to_f
 
 template <typename T> size_t Vector<T>::countNumNonZeroElements() const
 {
-    ASSERT(is_allocated_) << "Vector not allocated!";
+    PT_ASSERT(is_allocated_) << "Vector not allocated!";
     size_t cnt = 0;
     for (size_t k = 0; k < vector_length_; k++)
     {
@@ -1033,7 +1033,7 @@ template <typename T> void fillVectorWithArray(Vector<T>& v, const T* a)
 
 template <typename T> Vector<T> vectorCat(const Vector<T>& v0, const Vector<T>& v1)
 {
-    ASSERT(v0.isAllocated() && v1.isAllocated()) << "Input vectors not allocated!";
+    PT_ASSERT(v0.isAllocated() && v1.isAllocated()) << "Input vectors not allocated!";
     Vector<T> vres(v0.size() + v1.size());
 
     for (size_t k = 0; k < v0.size(); k++)
@@ -1051,8 +1051,8 @@ template <typename T> Vector<T> vectorCat(const Vector<T>& v0, const Vector<T>& 
 
 template <typename T> void Vector<T>::removeElementAtIndex(const size_t idx)
 {
-    ASSERT(is_allocated_) << "Vector not allocated!";
-    ASSERT(idx < vector_length_) << "Tried to remove element outside bounds!";
+    PT_ASSERT(is_allocated_) << "Vector not allocated!";
+    PT_ASSERT(idx < vector_length_) << "Tried to remove element outside bounds!";
 
     T* temp_data;
 
@@ -1074,19 +1074,19 @@ template <typename T> void Vector<T>::removeElementAtIndex(const size_t idx)
 
 template <typename T> void Vector<T>::removeElementsAtIndices(const IndexSpan& idx_span)
 {
-    ASSERT(is_allocated_) << "Vector not allocated!";
-    ASSERT(idx_span.from <= idx_span.to) << "To index smaller than from index!";
-    ASSERT(idx_span.to < vector_length_) << "Tried to remove elements outside bounds!";
+    PT_ASSERT(is_allocated_) << "Vector not allocated!";
+    PT_ASSERT(idx_span.from <= idx_span.to) << "To index smaller than from index!";
+    PT_ASSERT(idx_span.to < vector_length_) << "Tried to remove elements outside bounds!";
     if (idx_span.from == idx_span.to)
     {
-        LOG_WARNING() << "From and to indices are equal!";
+        PT_LOG_WARNING() << "From and to indices are equal!";
     }
 
     T* temp_data;
     size_t num_elements_to_remove = idx_span.to - idx_span.from + 1;
     DATA_ALLOCATION(temp_data, vector_length_ - num_elements_to_remove, T, "Vector");
 
-    ASSERT((vector_length_ - num_elements_to_remove) > 0) << "Tried to remove all elements!";
+    PT_ASSERT((vector_length_ - num_elements_to_remove) > 0) << "Tried to remove all elements!";
 
     size_t current_idx = 0;
     for (size_t k = 0; k < vector_length_; k++)

@@ -133,9 +133,9 @@ template <typename T> Vec4D<T> operator-(const Vec4D<T>& v0, const Vec4D<T>& v1)
 
 template <typename T> Vec4D<T> operator*(const Matrix<T>& m, const Vec4D<T>& v)
 {
-    ASSERT(m.isAllocated()) << "Matrix not allocated!";
-    ASSERT(m.rows() == 4) << "Matrix dimension mismatch!";
-    ASSERT(m.cols() == 4) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.isAllocated()) << "Matrix not allocated!";
+    PT_ASSERT(m.rows() == 4) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.cols() == 4) << "Matrix dimension mismatch!";
     Vec4D<T> res;
     res.x = m(0, 0) * v.x + m(0, 1) * v.y + m(0, 2) * v.z + m(0, 3) * v.w;
     res.y = m(1, 0) * v.x + m(1, 1) * v.y + m(1, 2) * v.z + m(1, 3) * v.w;
@@ -146,9 +146,9 @@ template <typename T> Vec4D<T> operator*(const Matrix<T>& m, const Vec4D<T>& v)
 
 template <typename T> Vec4D<T> operator*(const Vec4D<T>& v, const Matrix<T>& m)
 {
-    ASSERT(m.isAllocated()) << "Matrix not allocated!";
-    ASSERT(m.rows() == 4) << "Matrix dimension mismatch!";
-    ASSERT(m.cols() == 4) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.isAllocated()) << "Matrix not allocated!";
+    PT_ASSERT(m.rows() == 4) << "Matrix dimension mismatch!";
+    PT_ASSERT(m.cols() == 4) << "Matrix dimension mismatch!";
     Vec4D<T> res;
     res.x = m(0, 0) * v.x + m(1, 0) * v.y + m(2, 0) * v.z + m(3, 0) * v.w;
     res.y = m(0, 1) * v.x + m(1, 1) * v.y + m(2, 1) * v.z + m(3, 1) * v.w;
