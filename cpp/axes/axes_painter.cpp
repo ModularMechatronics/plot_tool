@@ -136,7 +136,8 @@ void AxesPainter::plotBegin()
     glPushMatrix();
 
     glRotatef(ax_ang.phi * 180.0f / M_PI, ax_ang.x, ax_ang.y, ax_ang.z);
-    glScaled(1.0 / s.x, 1.0 / s.y, 1.0 / s.z);
+    // Not sure why z axis should be negated... But it works like this.
+    glScaled(1.0 / s.x, 1.0 / s.y, -1.0 / s.z);
     glTranslated(-axes_center.x, -axes_center.y, axes_center.z);
 }
 
